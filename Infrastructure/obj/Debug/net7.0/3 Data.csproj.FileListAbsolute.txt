@@ -1,0 +1,15 @@
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\bin\Debug\net7.0\3 Data.deps.json
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\bin\Debug\net7.0\3 Data.dll
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\bin\Debug\net7.0\3 Data.pdb
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\bin\Debug\net7.0\3 Shared.dll
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\bin\Debug\net7.0\3 Shared.pdb
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\obj\Debug\net7.0\3 Data.csproj.AssemblyReference.cache
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\obj\Debug\net7.0\3 Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\obj\Debug\net7.0\3 Data.AssemblyInfoInputs.cache
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\obj\Debug\net7.0\3 Data.AssemblyInfo.cs
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\obj\Debug\net7.0\3 Data.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\obj\Debug\net7.0\3 Data.csproj.CopyComplete
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\obj\Debug\net7.0\3 Data.dll
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\obj\Debug\net7.0\refint\3 Data.dll
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\obj\Debug\net7.0\3 Data.pdb
+C:\Users\USUARIO\RiderProjects\Propertunity\3 Data\obj\Debug\net7.0\ref\3 Data.dll

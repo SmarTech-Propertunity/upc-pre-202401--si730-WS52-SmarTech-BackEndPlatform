@@ -1,0 +1,15 @@
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\bin\Debug\net7.0\Infrastructure.deps.json
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\bin\Debug\net7.0\Infrastructure.dll
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\bin\Debug\net7.0\Infrastructure.pdb
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\bin\Debug\net7.0\Shared.dll
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\bin\Debug\net7.0\Shared.pdb
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\obj\Debug\net7.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\obj\Debug\net7.0\Infrastructure.AssemblyInfo.cs
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\obj\Debug\net7.0\Infrastructure.csproj.CopyComplete
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\obj\Debug\net7.0\Infrastructure.dll
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\obj\Debug\net7.0\refint\Infrastructure.dll
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\obj\Debug\net7.0\Infrastructure.pdb
+C:\Users\USUARIO\RiderProjects\Propertunity\Infrastructure\obj\Debug\net7.0\ref\Infrastructure.dll
