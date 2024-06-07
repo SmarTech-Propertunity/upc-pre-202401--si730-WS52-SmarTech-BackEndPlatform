@@ -3,7 +3,9 @@ using _3_Data.Models.Publication;
 using _3_Shared.Domain.Models;
 using _3_Shared.Middleware.Exceptions;
 
+
 namespace _2_Domain;
+
 
 public class PublicationDomain : IPublicationDomain
 {
