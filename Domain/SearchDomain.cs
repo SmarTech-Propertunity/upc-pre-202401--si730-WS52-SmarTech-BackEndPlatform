@@ -6,10 +6,10 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace _2_Domain;
 
-public class SearchDomain : ISearchDomain
+public class SearchDomain : ISearchDomain 
 {
     //  @Dependencies
-    private readonly ISearchData _searchData;
+    private readonly ISearchData _searchData; 
     
     //  @Constructor
     public SearchDomain(
