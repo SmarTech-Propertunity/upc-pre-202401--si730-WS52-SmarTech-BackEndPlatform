@@ -1,7 +1,9 @@
-using _1_API.Controllers;
-using _1_API.Request;
+using _1_API.Publication.Controllers;
 using _2_Domain;
-using _3_Data.Models.Publication;
+using _2_Domain.Publication.Models.Commands;
+using _2_Domain.Publication.Models.Entities;
+using _2_Domain.Publication.Models.Queries;
+using _2_Domain.Publication.Services;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -15,19 +17,20 @@ public class PublicationControllerUnitTest
     {
         //  @Arrange
         var mockMapper = new Mock<IMapper>();
-        var mockPublicationDomain = new Mock<IPublicationDomain>();
+        var mockPublicationCommandService = new Mock<IPublicationCommandService>();
+        var mockPublicationQueryService = new Mock<IPublicationQueryService>();
 
-        var fakeGetPublicationRequest = new GetPublicationRequest()
-        {
-            Id = 1,
-            IsActive = 1
-        };
-        var fakeGetPublicationModel = new GetPublicationModel()
+        var fakeGetPublicationRequest = new GetPublicationQuery()
         {
             Id = 1,
             IsActive = true
         };
-        mockMapper.Setup(m => m.Map<GetPublicationModel>(It.IsAny<GetPublicationRequest>())).Returns(fakeGetPublicationModel);        
+        var fakeGetPublicationModel = new GetPublicationQuery()
+        {
+            Id = 1,
+            IsActive = true
+        };
+        mockMapper.Setup(m => m.Map<GetPublicationQuery>(It.IsAny<GetPublicationQuery>())).Returns(fakeGetPublicationModel);        
         var fakeResult = new PublicationModel
         {
             _Location = new LocationModel()
@@ -43,11 +46,12 @@ public class PublicationControllerUnitTest
             UpdatedData = null,
             UserId = 1
         };
-        mockPublicationDomain.Setup(p => p.GetPublicationAsync(fakeGetPublicationModel)).ReturnsAsync(fakeResult);
+        mockPublicationQueryService.Setup(p => p.Handle(fakeGetPublicationModel)).ReturnsAsync(fakeResult);
         
         var controller = new PublicationController(
             mockMapper.Object,
-            mockPublicationDomain.Object
+            mockPublicationCommandService.Object,
+            mockPublicationQueryService.Object
         );
         
         //  @Act
@@ -62,9 +66,10 @@ public class PublicationControllerUnitTest
     {
         //  @Arrange
         var mockMapper = new Mock<IMapper>();
-        var mockPublicationDomain = new Mock<IPublicationDomain>();
+        var mockPublicationCommandService = new Mock<IPublicationCommandService>();
+        var mockPublicationQueryService = new Mock<IPublicationQueryService>();
 
-        var fakePostPublicationRequest = new PostPublicationRequest()
+        var fakePostPublicationRequest = new PostPublicationCommand()
         {
             Title = "Fake Title",
             Description = "Fake Description",
@@ -87,13 +92,14 @@ public class PublicationControllerUnitTest
             UpdatedData = null,
             UserId = 1
         };
-        mockMapper.Setup(m => m.Map<PublicationModel>(It.IsAny<PostPublicationRequest>())).Returns(fakePublicationModel);
+        mockMapper.Setup(m => m.Map<PublicationModel>(It.IsAny<PostPublicationCommand>())).Returns(fakePublicationModel);
         var fakeResult = 1;
-        mockPublicationDomain.Setup(p => p.PostPublicationAsync(fakePublicationModel)).ReturnsAsync(fakeResult);
+        mockPublicationCommandService.Setup(p => p.Handle(fakePublicationModel)).ReturnsAsync(fakeResult);
         
         var controller = new PublicationController(
             mockMapper.Object,
-            mockPublicationDomain.Object
+            mockPublicationCommandService.Object,
+            mockPublicationQueryService.Object
         );
         
         //  @Act

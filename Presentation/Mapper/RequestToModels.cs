@@ -1,7 +1,12 @@
-using _1_API.Request;
+using _2_Domain.IAM.Models.Commands;
+using _2_Domain.IAM.Models.Entities;
+using _2_Domain.IAM.Models.ValueObjects;
+using _2_Domain.Publication.Models.Commands;
+using _2_Domain.Publication.Models.Entities;
+using _2_Domain.Publication.Models.Queries;
+using _2_Domain.Search.Models.Entities;
+using _2_Domain.Search.Models.Queries;
 using _3_Data.Models;
-using _3_Data.Models.Publication;
-using _3_Data.Models.Search;
 using AutoMapper;
 
 namespace _1_API.Mapper;
@@ -16,12 +21,12 @@ public class RequestToModels : Profile
             .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.Username));
         
         //  @RefreshTokenRequest to @RefreshTokenModel
-        CreateMap<RefreshTokenRequest, RefreshTokenModel>()
+        CreateMap<RefreshTokenCommand, CreateRefreshTokenCommand>()
             .ForMember(dest => dest.ExpiredToken, opt => opt.MapFrom(src => src.ExpiredToken))
             .ForMember(dest => dest.RefreshToken, opt => opt.MapFrom(src => src.RefreshToken));
         
         //  @UserRegisterRequest to @User
-        CreateMap<UserRegistrationRequest, User>()
+        CreateMap<UserRegistrationCommand, User>()
             .ForMember(
                 dest => dest._UserCredentials,
                 opt => opt.MapFrom(src => new UserCredentials
@@ -43,20 +48,20 @@ public class RequestToModels : Profile
                 )
             );
         
-        //  @SearchRequest to @SearchModel
-        CreateMap<SearchRequest, SearchModel>()
-            .ForMember(dest => dest.SearchInput, opt => opt.MapFrom(src => src.SearchInput))
-            .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type))
-            .ForMember(dest => dest.PriceMin, opt => opt.MapFrom(src => src.PriceMin))
-            .ForMember(dest => dest.PriceMax, opt => opt.MapFrom(src => src.PriceMax));
+        //  //  @SearchRequest to @SearchModel
+        //  CreateMap<SearchQuery, SearchModel>()
+        //      .ForMember(dest => dest.SearchInput, opt => opt.MapFrom(src => src.SearchInput))
+        //      .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type))
+        //      .ForMember(dest => dest.PriceMin, opt => opt.MapFrom(src => src.PriceMin))
+        //      .ForMember(dest => dest.PriceMax, opt => opt.MapFrom(src => src.PriceMax));
         
         //  @GetPublicationRequest to @GetPublicationModel
-        CreateMap<GetPublicationRequest, GetPublicationModel>()
+        CreateMap<GetPublicationQuery, GetPublicationQuery>()
             .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
             .ForMember(dest => dest.IsActive, opt => opt.MapFrom(src => src.IsActive));
         
         //  @PostPublicationRequest to @PublicationModel
-        CreateMap<PostPublicationRequest, PublicationModel>()
+        CreateMap<PostPublicationCommand, PublicationModel>()
             .ForMember(dest => dest.UserId, opt => opt.MapFrom(src => src.UserId))
             .ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Title))
             .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.Description))

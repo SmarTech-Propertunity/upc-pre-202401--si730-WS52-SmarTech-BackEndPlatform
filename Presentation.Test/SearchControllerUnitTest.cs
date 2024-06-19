@@ -1,8 +1,9 @@
-using _1_API.Controllers;
-using _1_API.Request;
+using _1_API.Search.Controllers;
 using _2_Domain;
-using _3_Data.Models.Publication;
-using _3_Data.Models.Search;
+using _2_Domain.Publication.Models.Entities;
+using _2_Domain.Search.Models.Entities;
+using _2_Domain.Search.Models.Queries;
+using _2_Domain.Search.Services;
 using _3_Shared;
 using _3_Shared.Domain.Models;
 using AutoMapper;
@@ -18,23 +19,24 @@ public class SearchControllerUnitTest
     {
         //  @Arrange
         var mockMapper = new Mock<IMapper>();
-        var mockSearchDomain = new Mock<ISearchDomain>();
-
-        var fakeSearchRequest = new SearchRequest()
+        var mockSearchCommandService = new Mock<ISearchCommandService>();
+        var mockSearchQueryService = new Mock<ISearchQueryService>();
+        
+        var fakeSearchRequest = new SearchQuery()
         {
             SearchInput = "Fake Search Input",
             Type = (int) SearchConstraints.RealStateType,
             PriceMin = 1.0f,
             PriceMax = 2.0f
         };
-        var fakeSearchModel = new SearchModel()
+        var fakeSearchModel = new SearchQuery()
         {
             SearchInput = "Fake Search Input",
             Type = (int) SearchConstraints.RealStateType,
             PriceMin = 1.0f,
             PriceMax = 2.0f
         };
-        mockMapper.Setup(m => m.Map<SearchModel>(It.IsAny<SearchRequest>())).Returns(fakeSearchModel);        
+        mockMapper.Setup(m => m.Map<SearchQuery>(It.IsAny<SearchQuery>())).Returns(fakeSearchModel);        
         var fakeResult = new List<PublicationModel>()
         {
             new PublicationModel()
@@ -53,11 +55,12 @@ public class SearchControllerUnitTest
                 UserId = 1
             },
         };
-        mockSearchDomain.Setup(p => p.SearchAsync(fakeSearchModel)).ReturnsAsync(fakeResult);
+        mockSearchQueryService.Setup(p => p.Handle(fakeSearchModel)).ReturnsAsync(fakeResult);
         
         var controller = new SearchController(
             mockMapper.Object,
-            mockSearchDomain.Object
+            mockSearchCommandService.Object,
+            mockSearchQueryService.Object
         );
         
         //  @Act

@@ -57,3 +57,6 @@ C:\Users\USUARIO\RiderProjects\Propertunity\Presentation\obj\Debug\net7.0\Presen
 C:\Users\USUARIO\RiderProjects\Propertunity\Presentation\obj\Debug\net7.0\ref\Presentation.dll
 C:\Users\USUARIO\RiderProjects\Propertunity\Presentation\bin\Debug\net7.0\Presentation.xml
 C:\Users\USUARIO\RiderProjects\Propertunity\Presentation\obj\Debug\net7.0\Presentation.xml
+C:\Users\USUARIO\RiderProjects\Propertunity\Presentation\bin\Debug\net7.0\Application.dll
+C:\Users\USUARIO\RiderProjects\Propertunity\Presentation\bin\Debug\net7.0\Application.pdb
+C:\Users\USUARIO\RiderProjects\Propertunity\Presentation\obj\Debug\net7.0\Presentation.sourcelink.json

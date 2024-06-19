@@ -1,9 +1,7 @@
 C:\Users\USUARIO\RiderProjects\Propertunity\Domain\bin\Debug\net7.0\Domain.deps.json
 C:\Users\USUARIO\RiderProjects\Propertunity\Domain\bin\Debug\net7.0\Domain.dll
 C:\Users\USUARIO\RiderProjects\Propertunity\Domain\bin\Debug\net7.0\Domain.pdb
-C:\Users\USUARIO\RiderProjects\Propertunity\Domain\bin\Debug\net7.0\Infrastructure.dll
 C:\Users\USUARIO\RiderProjects\Propertunity\Domain\bin\Debug\net7.0\Shared.dll
-C:\Users\USUARIO\RiderProjects\Propertunity\Domain\bin\Debug\net7.0\Infrastructure.pdb
 C:\Users\USUARIO\RiderProjects\Propertunity\Domain\bin\Debug\net7.0\Shared.pdb
 C:\Users\USUARIO\RiderProjects\Propertunity\Domain\obj\Debug\net7.0\Domain.csproj.AssemblyReference.cache
 C:\Users\USUARIO\RiderProjects\Propertunity\Domain\obj\Debug\net7.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
@@ -15,3 +13,4 @@ C:\Users\USUARIO\RiderProjects\Propertunity\Domain\obj\Debug\net7.0\Domain.dll
 C:\Users\USUARIO\RiderProjects\Propertunity\Domain\obj\Debug\net7.0\refint\Domain.dll
 C:\Users\USUARIO\RiderProjects\Propertunity\Domain\obj\Debug\net7.0\Domain.pdb
 C:\Users\USUARIO\RiderProjects\Propertunity\Domain\obj\Debug\net7.0\ref\Domain.dll
+C:\Users\USUARIO\RiderProjects\Propertunity\Domain\obj\Debug\net7.0\Domain.sourcelink.json

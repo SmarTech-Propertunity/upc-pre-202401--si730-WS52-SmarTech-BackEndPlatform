@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "y3tbZPaf+uoxayN1Kpo4AFUNis/pd3ZCAOkbibxV7M4LI+LEtUWLCwVN00xBez0KsCjnknrlMYxNg5nNUc/0og==",
+  "dgSpecHash": "OBGMwgQrfoqrkCVh+YN1t4ZMzhFVmC96beZ1+W0oZjpRV45njE9rteSwNQkgW16rAW6cXN21chWqFqYo1ZHP8w==",
   "success": true,
   "projectFilePath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation.Test\\Presentation.Test.csproj",
   "expectedPackageFiles": [
@@ -129,7 +129,10 @@
     "C:\\Users\\USUARIO\\.nuget\\packages\\xunit.core\\2.4.2\\xunit.core.2.4.2.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\xunit.extensibility.core\\2.4.2\\xunit.extensibility.core.2.4.2.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
-    "C:\\Users\\USUARIO\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512"
+    "C:\\Users\\USUARIO\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
   ],
   "logs": []
 }

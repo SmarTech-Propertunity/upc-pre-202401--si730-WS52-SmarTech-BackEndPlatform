@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "Infrastructure/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.19",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
           "Shared": "1.0.0"
@@ -89,6 +90,17 @@
           }
         }
       },
+      "Microsoft.Extensions.Configuration.Binder/7.0.4": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.Configuration.Binder.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.423.11508"
+          }
+        }
+      },
       "Microsoft.Extensions.DependencyInjection/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
@@ -150,6 +162,47 @@
           }
         }
       },
+      "Microsoft.IdentityModel.Abstractions/7.6.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {
+            "assemblyVersion": "7.6.0.0",
+            "fileVersion": "7.6.0.50527"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.JsonWebTokens/7.6.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "7.6.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+            "assemblyVersion": "7.6.0.0",
+            "fileVersion": "7.6.0.50527"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Logging/7.6.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Abstractions": "7.6.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.Logging.dll": {
+            "assemblyVersion": "7.6.0.0",
+            "fileVersion": "7.6.0.50527"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Tokens/7.6.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "7.6.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {
+            "assemblyVersion": "7.6.0.0",
+            "fileVersion": "7.6.0.50527"
+          }
+        }
+      },
       "MySqlConnector/2.2.5": {
         "runtime": {
           "lib/net7.0/MySqlConnector.dll": {
@@ -168,6 +221,28 @@
             "assemblyVersion": "7.0.0.0",
             "fileVersion": "7.0.0.0"
           }
+        }
+      },
+      "System.IdentityModel.Tokens.Jwt/7.6.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "7.6.0",
+          "Microsoft.IdentityModel.Tokens": "7.6.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "assemblyVersion": "7.6.0.0",
+            "fileVersion": "7.6.0.50527"
+          }
+        }
+      },
+      "Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "7.0.4",
+          "Shared": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "7.6.0"
+        },
+        "runtime": {
+          "Domain.dll": {}
         }
       },
       "Shared/1.0.0": {
@@ -232,6 +307,13 @@
       "path": "microsoft.extensions.configuration.abstractions/7.0.0",
       "hashPath": "microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512"
     },
+    "Microsoft.Extensions.Configuration.Binder/7.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8+XPvJnHZsYgHOQlcMuQe7QNF5KdVKHH1F/wW3nd8/u81Gk/XFAYMDP0Lpz18h7/AM95M662vvqMorcYxCBB4w==",
+      "path": "microsoft.extensions.configuration.binder/7.0.4",
+      "hashPath": "microsoft.extensions.configuration.binder.7.0.4.nupkg.sha512"
+    },
     "Microsoft.Extensions.DependencyInjection/7.0.0": {
       "type": "package",
       "serviceable": true,
@@ -274,6 +356,34 @@
       "path": "microsoft.extensions.primitives/7.0.0",
       "hashPath": "microsoft.extensions.primitives.7.0.0.nupkg.sha512"
     },
+    "Microsoft.IdentityModel.Abstractions/7.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q4MZ8d0LlWKWtQfxNl9ZRZVOQ7IPEAR6CF4rFKITfuqEUOhqrbwHbqBanReI37155IKb8V/tPJqpPa3KXm9wQQ==",
+      "path": "microsoft.identitymodel.abstractions/7.6.0",
+      "hashPath": "microsoft.identitymodel.abstractions.7.6.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.JsonWebTokens/7.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lsleZbCuh3wZ3RfKd8WJ7E52nIeQQzJsDrgHN+B3Zhzd32UTQ1V3Vjn1N9PssnSulAoEMF0aAiue7ucX+TPoQA==",
+      "path": "microsoft.identitymodel.jsonwebtokens/7.6.0",
+      "hashPath": "microsoft.identitymodel.jsonwebtokens.7.6.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Logging/7.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7AVJhNY4y/i96XGfaXovX8aAyYWz6HHtPEPHPpbg5JCchwVaoO08VmmpHe0L2gVagW/iHG0w4a4Xg9gxLXQ/8A==",
+      "path": "microsoft.identitymodel.logging/7.6.0",
+      "hashPath": "microsoft.identitymodel.logging.7.6.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Tokens/7.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xvEil42RUe4Si/TuLDvglNXpklgCWMSecPduczXPS2BAypjheUehPqKLwIy8vSdzB4K2zza3yLgmODBt+J6ZxQ==",
+      "path": "microsoft.identitymodel.tokens/7.6.0",
+      "hashPath": "microsoft.identitymodel.tokens.7.6.0.nupkg.sha512"
+    },
     "MySqlConnector/2.2.5": {
       "type": "package",
       "serviceable": true,
@@ -287,6 +397,18 @@
       "sha512": "sha512-Qk5WB/skSZet5Yrz6AN2ywjZaB1pxfAmvQ+5I4khTkLwwIamI4QJoH2NphCWLFQL+2ar8HvsNCTmwYk0qhqL0w==",
       "path": "pomelo.entityframeworkcore.mysql/7.0.0",
       "hashPath": "pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512"
+    },
+    "System.IdentityModel.Tokens.Jwt/7.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LIuEbv/kFpuw00yI/mPu+T9NAVdH/u7Y5ChCGzYQQeCg9Pft2C7HFWuO/P+Z7c2RcySNjVk1FmuAheKjYIbOkw==",
+      "path": "system.identitymodel.tokens.jwt/7.6.0",
+      "hashPath": "system.identitymodel.tokens.jwt.7.6.0.nupkg.sha512"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Shared/1.0.0": {
       "type": "project",

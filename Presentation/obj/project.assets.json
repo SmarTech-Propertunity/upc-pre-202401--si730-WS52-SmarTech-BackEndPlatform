@@ -754,11 +754,26 @@
           }
         }
       },
+      "Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Infrastructure": "1.0.0",
+          "Shared": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Application.dll": {}
+        }
+      },
       "Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Infrastructure": "1.0.0",
+          "AutoMapper": "9.0.0",
           "Microsoft.Extensions.Configuration.Binder": "7.0.4",
           "Shared": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "7.6.0"
@@ -774,6 +789,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.19",
           "Pomelo.EntityFrameworkCore.MySql": "7.0.0",
           "Shared": "1.0.0"
@@ -2488,6 +2504,11 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "Application/1.0.0": {
+      "type": "project",
+      "path": "../Application/Application.csproj",
+      "msbuildProject": "../Application/Application.csproj"
+    },
     "Domain/1.0.0": {
       "type": "project",
       "path": "../Domain/Domain.csproj",
@@ -2506,6 +2527,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Application >= 1.0.0",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 7.0.0",
       "Domain >= 1.0.0",
       "Infrastructure >= 1.0.0",
@@ -2552,6 +2574,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Application\\Application.csproj"
+            },
             "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj": {
               "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj"
             },
@@ -2618,6 +2643,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[7.0.14, 7.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[7.0.14, 7.0.14]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[7.0.14, 7.0.14]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[7.0.14, 7.0.14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -2626,7 +2669,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
