@@ -402,6 +402,7 @@
       },
       "Domain/1.0.0": {
         "dependencies": {
+          "AutoMapper": "9.0.0",
           "Microsoft.Extensions.Configuration.Binder": "7.0.4",
           "Shared": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "7.6.0"

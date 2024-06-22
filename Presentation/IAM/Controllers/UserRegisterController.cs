@@ -4,6 +4,7 @@ using _2_Domain.IAM.Models.Entities;
 using _2_Domain.IAM.Services.Commands;
 using _2_Domain.IAM.Services.Queries;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _1_API.IAM.Controllers;
@@ -55,6 +56,7 @@ public class UserRegisterController : ControllerBase
     /// <response code="400">You <b>didn't provide correct information</b> for the creation of a new user.</response>
     [HttpPost]
     [Route("register")]
+    [AllowAnonymous]
     public async Task<IActionResult> UserRegistration([FromBody] UserRegistrationCommand command)
     {
         if (!this.ModelState.IsValid)

@@ -72,6 +72,8 @@ builder.Services.AddScoped<IPublicationData, PublicationData>();
 builder.Services.AddScoped<IUserManagerCommandService, UserManagerCommandService>();
 builder.Services.AddScoped<IUserManagerQueryService, UserManagerQueryService>();
 builder.Services.AddScoped<IUserManagerData, UserManagerData>();
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<IEncryptService, EncryptService>();
 
 var key = builder.Configuration.GetValue<string>("JwtSettings:key");
 var keyBytes = Encoding.ASCII.GetBytes(key);
@@ -137,5 +139,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseMiddleware<AuthenticationMiddleware>();
 
 app.Run();

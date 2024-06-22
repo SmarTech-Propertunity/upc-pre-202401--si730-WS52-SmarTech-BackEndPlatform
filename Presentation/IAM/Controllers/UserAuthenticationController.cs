@@ -7,6 +7,7 @@ using _2_Domain.IAM.Services;
 using _2_Domain.IAM.Services.Commands;
 using _2_Domain.IAM.Services.Queries;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _1_API.IAM.Controllers;
@@ -62,6 +63,7 @@ public class UserAuthenticationController : ControllerBase
     /// <response code="401">You <b>didn't provide the correct credentials</b> for a successful login.</response>
     [HttpPost]
     [Route("login")]
+    [AllowAnonymous]
     public async Task<IActionResult> UserLogin([FromBody] GetTokenQuery request)
     {
         if (!this.ModelState.IsValid)
@@ -106,6 +108,7 @@ public class UserAuthenticationController : ControllerBase
     /// <response code="401"><b>Token may not be expired</b>, or any <b>input was incorrect</b>.</response>
     [HttpPost]
     [Route("refreshToken")]
+    [AllowAnonymous]
     public async Task<IActionResult> ObtainRefreshToken([FromBody] RefreshTokenCommand command)
     {
         if (!this.ModelState.IsValid)
