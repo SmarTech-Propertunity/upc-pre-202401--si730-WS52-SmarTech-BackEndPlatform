@@ -1,3 +1,4 @@
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
@@ -5,7 +6,9 @@ using System.Text;
 using _2_Domain.IAM.Models.Entities;
 using _2_Domain.IAM.Models.Queries;
 using _2_Domain.IAM.Models.ValueObjects;
+using _2_Domain.IAM.Repositories;
 using _2_Domain.IAM.Services;
+using _2_Domain.IAM.Services.Commands;
 using _2_Domain.IAM.Services.Queries;
 using _3_Data;
 using Microsoft.Extensions.Configuration;
@@ -16,17 +19,23 @@ namespace Application.IAM.QueryServices;
 public class UserAuthenticationQueryService : IUserAuthenticationQueryService
 {
     //  @Dependencies
-    private readonly IUserAthenticationData _userAuthenticationData;
+    private readonly IUserAuthenticationData _userAuthenticationData;
     private readonly IConfiguration _configuration;
+    private readonly ITokenService _tokenService;
+    private readonly IEncryptService _encryptService;
     
     //  @Constructor
     public UserAuthenticationQueryService(
-        IUserAthenticationData userAuthenticationDomain, 
-        IConfiguration configuration
+        IUserAuthenticationData userAuthenticationDomain, 
+        IConfiguration configuration,
+        ITokenService tokenService,
+        IEncryptService encryptService
     )
     {
         this._userAuthenticationData = userAuthenticationDomain;
         this._configuration = configuration;
+        this._tokenService = tokenService;
+        this._encryptService = encryptService;
     }
     
     //  @Methods
@@ -103,18 +112,22 @@ public class UserAuthenticationQueryService : IUserAuthenticationQueryService
     //  @Implementations
     public async Task<AuthenticationResults> Handle(GetTokenQuery query)
     {
-        var user = await this._userAuthenticationData.GetUserByCredentialsAsync(query);
-
-        if (user == null)
+        var existingUser = await _userAuthenticationData.GetUserByEmailAsync(query);
+        if (existingUser == null)
         {
-            return await Task.FromResult<AuthenticationResults>(null);
+            throw new DataException("User doesn't exist!");
         }
         
-        string createdToken = GenerateToken(user.Id);
+        if (!_encryptService.Verify(query.Password, existingUser._UserCredentials.HashedPassword))
+        {
+            throw new DataException("Invalid password or username");
+        }
+        
+        string createdToken = _tokenService.GenerateToken(existingUser);
         string createdRefreshToken = GenerateRefreshToken();
         
         return await this.SaveRefreshTokenRecord(
-            user.Id,
+            existingUser.Id,
             createdToken,
             createdRefreshToken
         );

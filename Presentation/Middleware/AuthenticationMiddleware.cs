@@ -52,7 +52,7 @@ public class AuthenticationMiddleware
 
         var user = await userQueryService.Handle(query);
         
-        if( user == null)
+        if (user == null)
         {
             context.Response.StatusCode = 401;
             await context.Response.WriteAsync("User not found");

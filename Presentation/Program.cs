@@ -3,6 +3,7 @@ using System.Text;
 using _1_API.Mapper;
 using _1_API.Middleware;
 using _2_Domain;
+using _2_Domain.IAM.Repositories;
 using _2_Domain.IAM.Services;
 using _2_Domain.IAM.Services.Commands;
 using _2_Domain.IAM.Services.Queries;
@@ -60,7 +61,7 @@ builder.Services.AddSwaggerGen(options =>
 builder.Services.AddScoped<IUserRegisterData, UserRegisterData>();
 builder.Services.AddScoped<IUserRegistrationQueryService, UserRegistrationQueryService>();
 builder.Services.AddScoped<IUserRegistrationCommandService, UserRegistrationCommandService>();
-builder.Services.AddScoped<IUserAthenticationData, UserAthenticationData>();
+builder.Services.AddScoped<IUserAuthenticationData, UserAuthenticationData>();
 builder.Services.AddScoped<IUserAuthenticationQueryService, UserAuthenticationQueryService>();
 builder.Services.AddScoped<IUserAuthenticationCommandService, UserAuthenticationCommandService>();
 builder.Services.AddScoped<ISearchCommandService, SearchCommandService>();

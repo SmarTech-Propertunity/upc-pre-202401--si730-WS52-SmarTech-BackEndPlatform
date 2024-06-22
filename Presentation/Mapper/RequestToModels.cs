@@ -17,7 +17,7 @@ public class RequestToModels : Profile
     {
         //  @AuthenticationRequest to @UserCredentials
         CreateMap<UserAuthenticationRequest, UserCredentials>()
-            .ForMember(dest => dest.Password, opt => opt.MapFrom(src => src.Password))
+            .ForMember(dest => dest.HashedPassword, opt => opt.MapFrom(src => src.Password))
             .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.Username));
         
         //  @RefreshTokenRequest to @RefreshTokenModel
@@ -32,7 +32,7 @@ public class RequestToModels : Profile
                 opt => opt.MapFrom(src => new UserCredentials
                     {
                         Email = src.Email,
-                        Password = src.Password,
+                        HashedPassword = src.Password,
                         Username = src.Username
                     }
                 )

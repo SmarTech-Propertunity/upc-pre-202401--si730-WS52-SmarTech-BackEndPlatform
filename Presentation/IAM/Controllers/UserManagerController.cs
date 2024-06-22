@@ -4,6 +4,7 @@ using _2_Domain.IAM.Services.Commands;
 using _2_Domain.IAM.Services.Queries;
 using _3_Shared.Middleware.Exceptions;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace _1_API.IAM.Controllers;
@@ -49,7 +50,6 @@ public class UserManagerController : ControllerBase
     /// <response code="200">Returns <b>the information of the user</b>.</response>
     /// <response code="404">User <b>not found</b>.</response>
     /// <response code="500"><b>Something went wrong</b>. Have you tried to unplug the internet cable?</response>
-    //  [Authorize]
     [HttpGet]
     [Route("getUserInformation")]
     public async Task<IActionResult> GetUserInformation(GetUserByIdQuery id)

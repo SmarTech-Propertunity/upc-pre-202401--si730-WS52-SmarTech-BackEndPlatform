@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using _2_Domain.IAM.Models.Commands;
 using _2_Domain.IAM.Models.ValueObjects;
+using _2_Domain.IAM.Repositories;
 using _2_Domain.IAM.Services;
 using _2_Domain.IAM.Services.Commands;
 using _3_Data;
@@ -15,12 +16,12 @@ namespace Application.IAM.CommandServices;
 public class UserAuthenticationCommandService : IUserAuthenticationCommandService
 {
     //  @Dependencies
-    private readonly IUserAthenticationData _userAuthenticationData;
+    private readonly IUserAuthenticationData _userAuthenticationData;
     private readonly IConfiguration _configuration;
     
     //  @Constructor
     public UserAuthenticationCommandService(
-        IUserAthenticationData userAuthenticationDomain, 
+        IUserAuthenticationData userAuthenticationDomain, 
         IConfiguration configuration
     )
     {
@@ -50,7 +51,7 @@ public class UserAuthenticationCommandService : IUserAuthenticationCommandServic
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = claims,
-            Expires = DateTime.UtcNow.AddSeconds(45),
+            Expires = DateTime.UtcNow.AddHours(3),
             SigningCredentials = credentialsToken
         };
         
@@ -84,7 +85,7 @@ public class UserAuthenticationCommandService : IUserAuthenticationCommandServic
             UserId = userId,
             Token = token,
             RefreshToken = refreshToken,
-            Expiration = DateTime.UtcNow.AddMinutes(2), //  !Change to a real scenario value.
+            Expiration = DateTime.UtcNow.AddHours(3), //  !Change to a real scenario value.
             Created = DateTime.UtcNow
         };
         
@@ -114,8 +115,8 @@ public class UserAuthenticationCommandService : IUserAuthenticationCommandServic
         }
         
         var createdRefreshToken = GenerateRefreshToken();
-        var crateToken = GenerateToken(command.UserId);
+        var createdToken = GenerateToken(command.UserId);
 
-        return await this.SaveRefreshTokenRecord(command.UserId, crateToken, createdRefreshToken);
+        return await this.SaveRefreshTokenRecord(command.UserId, createdToken, createdRefreshToken);
     }
 }

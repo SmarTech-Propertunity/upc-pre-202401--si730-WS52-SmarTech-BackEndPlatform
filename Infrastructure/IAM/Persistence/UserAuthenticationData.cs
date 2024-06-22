@@ -2,18 +2,19 @@ using _2_Domain.IAM.Models.Commands;
 using _2_Domain.IAM.Models.Entities;
 using _2_Domain.IAM.Models.Queries;
 using _2_Domain.IAM.Models.ValueObjects;
+using _2_Domain.IAM.Repositories;
 using _3_Data.Shared.Contexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace _3_Data.IAM.Persistence;
 
-public class UserAthenticationData : IUserAthenticationData
+public class UserAuthenticationData : IUserAuthenticationData
 {
     //  @Dependencies
     private readonly PropertunityDataCenterContext _propertunityDataCenterContext;
 
     //  @Constructor
-    public UserAthenticationData(
+    public UserAuthenticationData(
         PropertunityDataCenterContext propertunityDataCenterContext
     )
     {
@@ -21,12 +22,11 @@ public class UserAthenticationData : IUserAthenticationData
     }
     
     //  @Methods
-    public async Task<User?> GetUserByCredentialsAsync(GetTokenQuery query)
+    public async Task<User?> GetUserByEmailAsync(GetTokenQuery query)
     {
         var result = this._propertunityDataCenterContext.Users.
             FirstOrDefaultAsync(user =>
-            user._UserCredentials.Email == query.Email &&
-            user._UserCredentials.Password == query.Password
+            user._UserCredentials.Email == query.Email
         );
 
         return await result;

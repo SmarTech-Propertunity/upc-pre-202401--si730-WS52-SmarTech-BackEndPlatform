@@ -72,12 +72,7 @@ public class UserAuthenticationController : ControllerBase
         }
 
         var result = await this._authenticationQueryService.Handle(request);
-
-        if (result == null)
-        {
-            return Unauthorized();
-        }
-
+        
         return Ok(result);
     }
 

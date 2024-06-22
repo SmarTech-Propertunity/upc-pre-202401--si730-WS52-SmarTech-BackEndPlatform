@@ -12,15 +12,21 @@ public class UserRegistrationCommandService : IUserRegistrationCommandService
     //   @Dependencies  
     private readonly IMapper _mapper;
     private readonly IUserRegisterData _userRegisterData;
+    private readonly ITokenService _tokenService;
+    private readonly IEncryptService _encryptService;
 
     //   @Constructor
     public UserRegistrationCommandService(
         IMapper mapper,
-        IUserRegisterData userRegisterData   
+        IUserRegisterData userRegisterData,
+        ITokenService tokenService,
+        IEncryptService encryptService
     )
     {
         this._mapper = mapper;
         this._userRegisterData = userRegisterData;
+        this._tokenService = tokenService;
+        this._encryptService = encryptService;
     }
    
     //   @Implementations
@@ -36,6 +42,9 @@ public class UserRegistrationCommandService : IUserRegistrationCommandService
         {
             throw new UserAlreadyExistsException("User already exists.");
         }
+
+        user.Role = "BasicUser";
+        user._UserCredentials.HashedPassword = _encryptService.Encrypt(command.Password);
         
         return await this._userRegisterData.CreateUserAsync(user);
     }
