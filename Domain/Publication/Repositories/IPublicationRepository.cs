@@ -3,7 +3,7 @@ using _2_Domain.Publication.Models.Queries;
 
 namespace _2_Domain.Publication.Repositories;
 
-public interface IPublicationData
+public interface IPublicationRepository
 {
     public Task<PublicationModel?> GetPublicationAsync(GetPublicationQuery id);
     

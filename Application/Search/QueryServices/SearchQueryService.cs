@@ -9,14 +9,14 @@ namespace Application.Search.QueryServices;
 public class SearchQueryService : ISearchQueryService
 {
     //  @Dependencies
-    private readonly ISearchData _searchData; 
+    private readonly ISearchRepository _searchRepository; 
     
     //  @Constructor
     public SearchQueryService(
-        ISearchData searchData
+        ISearchRepository searchRepository
     )
     {
-        this._searchData = searchData;
+        this._searchRepository = searchRepository;
     }
     
     //  @Methods
@@ -38,7 +38,7 @@ public class SearchQueryService : ISearchQueryService
             (search.PriceMin, search.PriceMax) = (search.PriceMax, search.PriceMin);
         }
 
-        var results = await this._searchData.SearchAsync(search);
+        var results = await this._searchRepository.SearchAsync(search);
         return await Task.FromResult(results);
     }
 }

@@ -4,7 +4,7 @@ using _2_Domain.Search.Models.Queries;
 
 namespace _2_Domain.Search.Repositories;
 
-public interface ISearchData
+public interface ISearchRepository
 {
     public Task<List<PublicationModel>> SearchAsync(SearchQuery search);
 }

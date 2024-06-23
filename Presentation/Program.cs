@@ -66,10 +66,10 @@ builder.Services.AddScoped<IUserAuthenticationQueryService, UserAuthenticationQu
 builder.Services.AddScoped<IUserAuthenticationCommandService, UserAuthenticationCommandService>();
 builder.Services.AddScoped<ISearchCommandService, SearchCommandService>();
 builder.Services.AddScoped<ISearchQueryService, SearchQueryService>();
-builder.Services.AddScoped<ISearchData, SearchData>();
+builder.Services.AddScoped<ISearchRepository, SearchRepository>();
 builder.Services.AddScoped<IPublicationCommandService, PublicationCommandService>();
 builder.Services.AddScoped<IPublicationQueryService, PublicationQueryService>();
-builder.Services.AddScoped<IPublicationData, PublicationData>();
+builder.Services.AddScoped<IPublicationRepository, PublicationRepository>();
 builder.Services.AddScoped<IUserManagerCommandService, UserManagerCommandService>();
 builder.Services.AddScoped<IUserManagerQueryService, UserManagerQueryService>();
 builder.Services.AddScoped<IUserManagerData, UserManagerData>();

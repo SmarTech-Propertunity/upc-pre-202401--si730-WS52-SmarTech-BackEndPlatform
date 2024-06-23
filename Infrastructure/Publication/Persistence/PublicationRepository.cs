@@ -6,13 +6,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _3_Data.Publication.Persistence;
 
-public class PublicationData : IPublicationData
+public class PublicationRepository : IPublicationRepository
 {
     //  @Dependencies
     private readonly PropertunityDataCenterContext _propertunityDataCenterContext;
 
     //  @Constructor
-    public PublicationData(
+    public PublicationRepository(
         PropertunityDataCenterContext propertunityDataCenterContext
     )
     {

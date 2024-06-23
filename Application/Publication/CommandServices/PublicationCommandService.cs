@@ -10,16 +10,16 @@ namespace Application.Publication.CommandServices;
 public class PublicationCommandService : IPublicationCommandService
 {
     //  @Dependencies
-    private readonly IPublicationData _publicationData;
+    private readonly IPublicationRepository _publicationRepository;
     private readonly IUserManagerData _userManagerData;
     
     //  @Constructor
     public PublicationCommandService(
-        IPublicationData publicationData,
+        IPublicationRepository publicationRepository,
         IUserManagerData userManagerData
     )
     {
-        this._publicationData = publicationData;
+        this._publicationRepository = publicationRepository;
         this._userManagerData = userManagerData;
     }
     
@@ -35,7 +35,7 @@ public class PublicationCommandService : IPublicationCommandService
         //  @Validations
         //  1.  Users can't post more than 'UserConstraints.MaxNormalUserPublications' publications.
         //      An account upgrade is required for more publications.
-        var userPublications = await this._publicationData.GetUserPublicationsAsync(publication.UserId);
+        var userPublications = await this._publicationRepository.GetUserPublicationsAsync(publication.UserId);
         if (
             (userPublications.Count >= (int)UserConstraints.MaxNormalUserPublications) && 
             (result.UserLevel == (int)UserRole.NormalUser)
@@ -44,7 +44,7 @@ public class PublicationCommandService : IPublicationCommandService
             throw new MaxPublicationLimitReachedException("User reached the maximum publication limit!");
         }
         
-        return await this._publicationData.PostPublicationAsync(publication);
+        return await this._publicationRepository.PostPublicationAsync(publication);
     }
 
     public async Task<int> Handle(int id)
@@ -54,6 +54,6 @@ public class PublicationCommandService : IPublicationCommandService
             throw new InvalidIdException("Invalid Id!");
         }
         
-        return await this._publicationData.DeletePublicationAsync(id);
+        return await this._publicationRepository.DeletePublicationAsync(id);
     }
 }

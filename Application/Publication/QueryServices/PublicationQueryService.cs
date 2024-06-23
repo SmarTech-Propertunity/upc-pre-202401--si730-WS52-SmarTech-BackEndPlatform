@@ -9,16 +9,16 @@ namespace Application.Publication.QueryServices;
 public class PublicationQueryService : IPublicationQueryService
 {
     //  @Dependencies
-    private readonly IPublicationData _publicationData;
+    private readonly IPublicationRepository _publicationRepository;
     private readonly IUserManagerData _userManagerData;
     
     //  @Constructor
     public PublicationQueryService(
-        IPublicationData publicationData,
+        IPublicationRepository publicationRepository,
         IUserManagerData userManagerData
     )
     {
-        this._publicationData = publicationData;
+        this._publicationRepository = publicationRepository;
         this._userManagerData = userManagerData;
     }
     
@@ -30,6 +30,6 @@ public class PublicationQueryService : IPublicationQueryService
             throw new ArgumentException("Invalid Id!");
         }
         
-        return await this._publicationData.GetPublicationAsync(query);
+        return await this._publicationRepository.GetPublicationAsync(query);
     }
 }
