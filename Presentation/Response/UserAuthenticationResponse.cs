@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using _3_Data.Models;
 
 namespace _1_API.Response;
 

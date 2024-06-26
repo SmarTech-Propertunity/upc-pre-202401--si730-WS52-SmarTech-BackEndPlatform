@@ -1,3 +1,4 @@
+using _1_API.Filters;
 using _2_Domain.Search.Models.Entities;
 using _2_Domain.Search.Models.Queries;
 using _2_Domain.Search.Services;
@@ -58,6 +59,7 @@ public class SearchController : ControllerBase
     //  [Authorize]
     [HttpGet]
     [Route("main")]
+    [CustomAuthorize("BasicUser", "PremiumUser", "Admin")]
     public async Task<IActionResult> SearchMain([FromQuery] SearchQuery query)
     {
         if (!this.ModelState.IsValid)

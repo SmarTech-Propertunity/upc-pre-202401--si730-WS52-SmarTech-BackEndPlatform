@@ -28,7 +28,7 @@ public class UserRegisterData : IUserRegisterData
             {
                 try
                 {
-                    data._UserInformation.IsActive = true;
+                    data._UserInformation.IsDeleted = false;
                     this._propertunityDataCenterContext.Users.Add(data);
                     await this._propertunityDataCenterContext.SaveChangesAsync();
                     await transaction.CommitAsync();

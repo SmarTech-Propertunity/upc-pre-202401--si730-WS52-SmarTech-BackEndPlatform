@@ -8,14 +8,14 @@ namespace Application.Search.QueryServices;
 public class UserManagerQueryService : IUserManagerQueryService
 {
     //  @Dependencies
-    private readonly IUserManagerData _userManagerData;
+    private readonly IUserManagerRepository _userManagerRepository;
     
     //  @Constructor
     public UserManagerQueryService(
-        IUserManagerData userManagerData
+        IUserManagerRepository userManagerRepository
     )
     {
-        this._userManagerData = userManagerData;
+        this._userManagerRepository = userManagerRepository;
     }
     
     //  @Methods
@@ -27,6 +27,6 @@ public class UserManagerQueryService : IUserManagerQueryService
         }
         
         //  Proceed with your action, human.
-        return await this._userManagerData.GetUserByIdAsync(query.Id);
+        return await this._userManagerRepository.GetUserByIdAsync(query.Id);
     }
 }

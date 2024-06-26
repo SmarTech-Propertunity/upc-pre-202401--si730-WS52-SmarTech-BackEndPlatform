@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _3_Data.IAM.Persistence;
 
-public class UserManagerData : IUserManagerData
+public class UserManagerRepository : IUserManagerRepository
 {
     //  @Dependencies
     private readonly PropertunityDataCenterContext _propertunityDataCenterContext;
 
     //  @Constructor
-    public UserManagerData(
+    public UserManagerRepository(
         PropertunityDataCenterContext propertunityDataCenterContext
     )
     {

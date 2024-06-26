@@ -2,6 +2,7 @@ using _2_Domain.IAM.Models.Commands;
 using _2_Domain.IAM.Models.Entities;
 using _2_Domain.IAM.Services.Commands;
 using _3_Data;
+using _3_Shared.Domain.Models.User;
 using _3_Shared.Middleware.Exceptions;
 using AutoMapper;
 
@@ -43,7 +44,7 @@ public class UserRegistrationCommandService : IUserRegistrationCommandService
             throw new UserAlreadyExistsException("User already exists.");
         }
 
-        user.Role = "BasicUser";
+        user._UserInformation.Role = UserRole.BasicUser.ToString();
         user._UserCredentials.HashedPassword = _encryptService.Encrypt(command.Password);
         
         return await this._userRegisterData.CreateUserAsync(user);

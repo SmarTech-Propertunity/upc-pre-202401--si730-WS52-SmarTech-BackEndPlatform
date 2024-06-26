@@ -3,6 +3,8 @@ using _2_Domain.Publication.Models.Queries;
 using _2_Domain.Publication.Repositories;
 using _2_Domain.Publication.Services;
 using _3_Data;
+using _3_Shared.Domain.Models.User;
+using _3_Shared.Middleware.Exceptions;
 
 namespace Application.Publication.QueryServices;
 
@@ -10,16 +12,16 @@ public class PublicationQueryService : IPublicationQueryService
 {
     //  @Dependencies
     private readonly IPublicationRepository _publicationRepository;
-    private readonly IUserManagerData _userManagerData;
+    private readonly IUserManagerRepository _userManagerRepository;
     
     //  @Constructor
     public PublicationQueryService(
         IPublicationRepository publicationRepository,
-        IUserManagerData userManagerData
+        IUserManagerRepository userManagerRepository
     )
     {
         this._publicationRepository = publicationRepository;
-        this._userManagerData = userManagerData;
+        this._userManagerRepository = userManagerRepository;
     }
     
     //  @Methods
@@ -27,9 +29,29 @@ public class PublicationQueryService : IPublicationQueryService
     {
         if (query.Id <= 0)
         {
-            throw new ArgumentException("Invalid Id!");
+            throw new InvalidIdException("Invalid Id!");
         }
         
-        return await this._publicationRepository.GetPublicationAsync(query);
+        var result = await this._publicationRepository.GetPublicationAsync(query);
+        if (result == null)
+        {
+            throw new PublicationNotFoundException("Publication not found!");
+        }
+        
+        //  @Validations
+        //  1.  Check if the publication has expired, otherwise verify and continue.
+        var user = await this._userManagerRepository.GetUserByIdAsync(result.UserId);
+        if (((DateTime.Now - result.CreatedDate).TotalDays > (double) UserConstraints.TimeActiveInDaysBasicUser) &&
+            (user.Role == UserRole.BasicUser.ToString()))
+        {
+            await this._publicationRepository.MarkAsExpiredAsync(result);
+        }
+        
+        if (result.HasExpired)
+        {
+            throw new PublicationExpiredException("Publication not found!");
+        }
+
+        return result;
     }
 }

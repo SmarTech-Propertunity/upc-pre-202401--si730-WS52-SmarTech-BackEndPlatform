@@ -1,3 +1,4 @@
+using _1_API.Filters;
 using _2_Domain;
 using _2_Domain.Publication.Models.Commands;
 using _2_Domain.Publication.Models.Entities;
@@ -95,6 +96,7 @@ public class PublicationController : ControllerBase
     //  [Authorize]
     [HttpPost]
     [Route("postPublication")]
+    [CustomAuthorize("BasicUser", "PremiumUser")]
     public async Task<IActionResult> PostPublication([FromBody] PostPublicationCommand publicationPostCommand)
     {
         if (!ModelState.IsValid)
@@ -129,7 +131,7 @@ public class PublicationController : ControllerBase
     /// <response code="200">Returns <b>1</b> if the publication was successfully deleted.</response>
     /// <response code="500"><b>Something wrong</b> appears to be with your query.</response>
     /// <response code="400">Your publication <b>couldn't be deleted</b>; bad request.</response>
-    //  [Authorize]
+    [CustomAuthorize("BasicUser", "PremiumUser", "Admin")]
     [HttpDelete]
     [Route("deletePublication")]
     public async Task<IActionResult> DeletePublication([FromBody] int id)

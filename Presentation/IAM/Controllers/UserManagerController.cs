@@ -1,3 +1,4 @@
+using _1_API.Filters;
 using _2_Domain;
 using _2_Domain.IAM.Models.Queries;
 using _2_Domain.IAM.Services.Commands;
@@ -52,6 +53,7 @@ public class UserManagerController : ControllerBase
     /// <response code="500"><b>Something went wrong</b>. Have you tried to unplug the internet cable?</response>
     [HttpGet]
     [Route("getUserInformation")]
+    [CustomAuthorize("BasicUser", "PremiumUser", "Admin")]
     public async Task<IActionResult> GetUserInformation(GetUserByIdQuery id)
     {
         if (!ModelState.IsValid)

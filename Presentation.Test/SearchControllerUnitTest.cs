@@ -48,10 +48,10 @@ public class SearchControllerUnitTest
                 CreatedDate = DateTime.Now,
                 Description = "Fake Description",
                 Id = 1,
-                IsActive = true,
+                IsDeleted = false,
                 Title = "Fake Title",
                 Price = 1.0f,
-                UpdatedData = null,
+                UpdatedDate = null,
                 UserId = 1
             },
         };

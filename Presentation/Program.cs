@@ -52,6 +52,29 @@ builder.Services.AddSwaggerGen(options =>
             },
             TermsOfService = new Uri("https://propertunity.com/terms-of-service")
         });
+        options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+        {
+            In = ParameterLocation.Header,
+            Description = "Please enter token",
+            Name = "Authorization",
+            Type = SecuritySchemeType.Http,
+            BearerFormat = "JWT",
+            Scheme = "bearer"
+        });
+        options.AddSecurityRequirement(new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Id = "Bearer",
+                        Type = ReferenceType.SecurityScheme
+                    }
+                },
+                Array.Empty<string>()
+            }
+        });
         
         var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
         options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
@@ -72,12 +95,13 @@ builder.Services.AddScoped<IPublicationQueryService, PublicationQueryService>();
 builder.Services.AddScoped<IPublicationRepository, PublicationRepository>();
 builder.Services.AddScoped<IUserManagerCommandService, UserManagerCommandService>();
 builder.Services.AddScoped<IUserManagerQueryService, UserManagerQueryService>();
-builder.Services.AddScoped<IUserManagerData, UserManagerData>();
+builder.Services.AddScoped<IUserManagerRepository, UserManagerRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IEncryptService, EncryptService>();
 
 var key = builder.Configuration.GetValue<string>("JwtSettings:key");
 var keyBytes = Encoding.ASCII.GetBytes(key);
+//  @Authentication
 builder.Services.AddAuthentication(config =>
 {
     config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -114,6 +138,7 @@ builder.Services.AddDbContext<PropertunityDataCenterContext>(
                 errorNumbersToAdd: null)
         );
     });
+
 
 var app = builder.Build();
 

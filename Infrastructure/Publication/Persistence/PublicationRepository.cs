@@ -25,7 +25,7 @@ public class PublicationRepository : IPublicationRepository
         var result = await this._propertunityDataCenterContext.Publication.
             Where(u => 
                 (u.Id == query.Id) && 
-                (u.IsActive == query.IsActive)
+                (u.IsDeleted == false)
             ).FirstOrDefaultAsync();
         
         return result;
@@ -41,7 +41,7 @@ public class PublicationRepository : IPublicationRepository
             {
                 try
                 {
-                    publication.IsActive = true;
+                    publication.IsDeleted = false;
                     this._propertunityDataCenterContext.Publication.Add(publication);
                     await this._propertunityDataCenterContext.SaveChangesAsync();
                     await transaction.CommitAsync();
@@ -61,7 +61,7 @@ public class PublicationRepository : IPublicationRepository
         var result = await this._propertunityDataCenterContext.Publication.
             Where(u => 
                 (u.UserId == userId) && 
-                (u.IsActive == true)
+                (u.IsDeleted == false)
             ).ToListAsync();
 
         return result;
@@ -72,7 +72,7 @@ public class PublicationRepository : IPublicationRepository
         var publication = await this._propertunityDataCenterContext.Publication.
             Where(u => 
                 (u.Id == publicationId) && 
-                (u.IsActive == true)
+                (u.IsDeleted == false)
             ).FirstOrDefaultAsync();
 
         if (publication == null)
@@ -80,9 +80,48 @@ public class PublicationRepository : IPublicationRepository
             return -1;
         }
 
-        publication.IsActive = false;
-        await this._propertunityDataCenterContext.SaveChangesAsync();
+        var executionStrategy = this._propertunityDataCenterContext.Database.CreateExecutionStrategy();
+        await executionStrategy.ExecuteAsync(async () =>
+        {
+            using (var transaction = await this._propertunityDataCenterContext.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    publication.IsDeleted = true;
+                    await this._propertunityDataCenterContext.SaveChangesAsync();
+                    await transaction.CommitAsync();
+                }
+                catch (Exception exception)
+                {
+                    await transaction.RollbackAsync();
+                }
+            }        
+        });
 
+        return publication.Id;
+    }
+
+    public async Task<int> MarkAsExpiredAsync(PublicationModel publication)
+    {
+        var executionStrategy = this._propertunityDataCenterContext.Database.CreateExecutionStrategy();
+        
+        await executionStrategy.ExecuteAsync(async () =>
+        {
+            using (var transaction = await this._propertunityDataCenterContext.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    publication.HasExpired = true;
+                    await this._propertunityDataCenterContext.SaveChangesAsync();
+                    await transaction.CommitAsync();
+                }
+                catch (Exception exception)
+                {
+                    await transaction.RollbackAsync();
+                }
+            }        
+        });
+        
         return publication.Id;
     }
 }

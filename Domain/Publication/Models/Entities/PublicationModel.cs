@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
-using _3_Data.Models;
 using _3_Shared.Domain.Models;
+using _3_Shared.Domain.Models.Publication;
+using _3_Shared.Domain.Models.User;
+using _3_Shared.Models.Entities;
 
 namespace _2_Domain.Publication.Models.Entities;
 
@@ -12,10 +14,10 @@ public class PublicationModel : ModelBase
         0, int.MaxValue, 
         ErrorMessage = "'Id' must be a valid number."
     )]
-    public int Id { get; set; }
+    public int Id { get; init; }
     
     [Required]
-    public int UserId { get; set; }
+    public int UserId { get; init; }
     
     [Required]
     [StringLength(
@@ -43,4 +45,9 @@ public class PublicationModel : ModelBase
     
     [Required]
     public LocationModel _Location { get; set; }
+
+    [Required] public double Priority { get; set; } = (double)UserConstraints.PublicationPriorityPremiumUser;
+    
+    public bool HasExpired { get; set; } = false;
+    public DateTime ExpiresAt { get; set; }
 }

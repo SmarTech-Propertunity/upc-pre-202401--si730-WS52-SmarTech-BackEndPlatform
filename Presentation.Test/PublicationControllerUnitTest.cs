@@ -22,13 +22,11 @@ public class PublicationControllerUnitTest
 
         var fakeGetPublicationRequest = new GetPublicationQuery()
         {
-            Id = 1,
-            IsActive = true
+            Id = 1
         };
         var fakeGetPublicationModel = new GetPublicationQuery()
         {
-            Id = 1,
-            IsActive = true
+            Id = 1
         };
         mockMapper.Setup(m => m.Map<GetPublicationQuery>(It.IsAny<GetPublicationQuery>())).Returns(fakeGetPublicationModel);        
         var fakeResult = new PublicationModel
@@ -40,10 +38,10 @@ public class PublicationControllerUnitTest
             CreatedDate = DateTime.Now,
             Description = "Fake Description",
             Id = 1,
-            IsActive = true,
+            IsDeleted = false,
             Title = "Fake Title",
             Price = 1.0f,
-            UpdatedData = null,
+            UpdatedDate = null,
             UserId = 1
         };
         mockPublicationQueryService.Setup(p => p.Handle(fakeGetPublicationModel)).ReturnsAsync(fakeResult);
@@ -86,10 +84,10 @@ public class PublicationControllerUnitTest
             CreatedDate = DateTime.Now,
             Description = "Fake Description",
             Id = 1,
-            IsActive = true,
+            IsDeleted = false,
             Title = "Fake Title",
             Price = 1.0f,
-            UpdatedData = null,
+            UpdatedDate = null,
             UserId = 1
         };
         mockMapper.Setup(m => m.Map<PublicationModel>(It.IsAny<PostPublicationCommand>())).Returns(fakePublicationModel);

@@ -60,7 +60,7 @@ public class UserAuthenticationQueryService : IUserAuthenticationQueryService
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = claims,
-            Expires = DateTime.UtcNow.AddSeconds(45),
+            Expires = DateTime.UtcNow.AddHours(4),
             SigningCredentials = credentialsToken
         };
         
@@ -94,7 +94,7 @@ public class UserAuthenticationQueryService : IUserAuthenticationQueryService
             UserId = userId,
             Token = token,
             RefreshToken = refreshToken,
-            Expiration = DateTime.UtcNow.AddMinutes(2), //  !Change to a real scenario value.
+            Expiration = DateTime.UtcNow.AddHours(4),
             Created = DateTime.UtcNow
         };
         

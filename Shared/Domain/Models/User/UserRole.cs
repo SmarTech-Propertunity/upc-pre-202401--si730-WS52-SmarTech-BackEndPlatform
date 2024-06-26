@@ -1,7 +1,8 @@
-namespace _3_Shared.Domain.Models;
+namespace _3_Shared.Domain.Models.User;
 
 public enum UserRole
 {
-    NormalUser,
-    VeryImportantUser,
+    BasicUser,
+    PremiumUser,
+    Admin
 }

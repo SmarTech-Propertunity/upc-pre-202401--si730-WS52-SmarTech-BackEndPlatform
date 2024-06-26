@@ -1,4 +1,4 @@
-namespace _3_Shared.Domain.Models;
+namespace _3_Shared.Domain.Models.Publication;
 
 public enum PublicationConstraints
 {

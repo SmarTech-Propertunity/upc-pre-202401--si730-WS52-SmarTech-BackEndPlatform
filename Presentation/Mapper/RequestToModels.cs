@@ -6,7 +6,6 @@ using _2_Domain.Publication.Models.Entities;
 using _2_Domain.Publication.Models.Queries;
 using _2_Domain.Search.Models.Entities;
 using _2_Domain.Search.Models.Queries;
-using _3_Data.Models;
 using AutoMapper;
 
 namespace _1_API.Mapper;
@@ -57,8 +56,7 @@ public class RequestToModels : Profile
         
         //  @GetPublicationRequest to @GetPublicationModel
         CreateMap<GetPublicationQuery, GetPublicationQuery>()
-            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-            .ForMember(dest => dest.IsActive, opt => opt.MapFrom(src => src.IsActive));
+            .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id));
         
         //  @PostPublicationRequest to @PublicationModel
         CreateMap<PostPublicationCommand, PublicationModel>()

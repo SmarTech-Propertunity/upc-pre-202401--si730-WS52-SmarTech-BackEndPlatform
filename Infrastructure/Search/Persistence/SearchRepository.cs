@@ -1,5 +1,4 @@
 using _2_Domain.Publication.Models.Entities;
-using _2_Domain.Search.Models.Entities;
 using _2_Domain.Search.Models.Queries;
 using _2_Domain.Search.Repositories;
 using _3_Data.Shared.Contexts;
@@ -27,7 +26,7 @@ public class SearchRepository : ISearchRepository
                 search.PriceMin <= u.Price &&
                 u.Price <= search.PriceMax &&
                 u._Location.Address.Contains(search.SearchInput) &&
-                u.IsActive)
+                !u.IsDeleted)
             .ToListAsync();
         
         return result;
