@@ -1,12 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "k7J7JBGWcgFt4/k7Q3hjpUMvsAOaRgH/VoRcbrHdNBTG1BAX3g2ZzY3qrd19D8PtmVrpNtgBwJw1UOorGmR41g==",
+  "dgSpecHash": "MYE0QRVE3PKJ/HNAB1C2YpxFwPtFEN7LXNF1cLHMGtVG1IglnQJuWNFJNB0w6/p/VWF4N+1nxadIK+lhR4ay0g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

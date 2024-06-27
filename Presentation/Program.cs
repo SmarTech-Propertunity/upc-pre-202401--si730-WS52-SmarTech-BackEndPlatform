@@ -66,7 +66,7 @@ builder.Services.AddSwaggerGen(options =>
             In = ParameterLocation.Header,
             Description = "Please enter token",
             Name = "Authorization",
-            Type = SecuritySchemeType.Http,
+            Type = SecuritySchemeType.ApiKey,
             BearerFormat = "JWT",
             Scheme = "bearer"
         });
@@ -154,6 +154,8 @@ var app = builder.Build();
 
 app.UseMiddleware<ErrorHandlerMiddleware>();
 
+app.UseCors("AllowAllOrigins");
+
 
 using (var scope = app.Services.CreateScope())
 using (var context = scope.ServiceProvider.GetService<PropertunityDataCenterContext>())
@@ -165,7 +167,9 @@ using (var context = scope.ServiceProvider.GetService<PropertunityDataCenterCont
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+    });
 }
 
 app.UseAuthentication();
