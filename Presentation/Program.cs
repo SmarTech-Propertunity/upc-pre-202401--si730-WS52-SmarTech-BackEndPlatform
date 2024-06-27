@@ -30,7 +30,16 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//  @CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllPolicy", 
+        policy => policy.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
+
+//  @Services
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -101,6 +110,7 @@ builder.Services.AddScoped<IEncryptService, EncryptService>();
 
 var key = builder.Configuration.GetValue<string>("JwtSettings:key");
 var keyBytes = Encoding.ASCII.GetBytes(key);
+
 //  @Authentication
 builder.Services.AddAuthentication(config =>
 {
@@ -124,7 +134,7 @@ builder.Services.AddAutoMapper(
     typeof(RequestToModels)
 );
 
-//  Connection to database.
+//  @Database
 var connectionString = builder.Configuration.GetConnectionString("propertunityDataCenterConnection");
 var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
 builder.Services.AddDbContext<PropertunityDataCenterContext>(
