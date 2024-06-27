@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation.Test\\Presentation.Test.csproj": {}
+    "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation.Test\\Presentation.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Application\\Application.csproj": {
+    "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\lucio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Application\\obj\\",
+        "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lucio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,20 +26,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Infrastructure\\Infrastructure.csproj"
               },
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj"
               }
             }
           }
@@ -66,26 +71,44 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj": {
+    "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\lucio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lucio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -93,14 +116,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj"
               }
             }
           }
@@ -139,26 +163,44 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\lucio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lucio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -166,17 +208,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj"
               }
             }
           }
@@ -211,26 +254,44 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation.Test\\Presentation.Test.csproj": {
+    "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation.Test\\Presentation.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation.Test\\Presentation.Test.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation.Test\\Presentation.Test.csproj",
         "projectName": "Presentation.Test",
-        "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation.Test\\Presentation.Test.csproj",
-        "packagesPath": "C:\\Users\\lucio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation.Test\\obj\\",
+        "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation.Test\\Presentation.Test.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation.Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lucio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -238,23 +299,24 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Infrastructure\\Infrastructure.csproj"
               },
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation\\Presentation.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation\\Presentation.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation\\Presentation.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation\\Presentation.csproj"
               },
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj"
               }
             }
           }
@@ -309,26 +371,44 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation\\Presentation.csproj": {
+    "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation\\Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation\\Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation\\Presentation.csproj",
         "projectName": "Presentation",
-        "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation\\Presentation.csproj",
-        "packagesPath": "C:\\Users\\lucio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Presentation\\obj\\",
+        "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation\\Presentation.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Presentation\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lucio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -336,23 +416,24 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Application\\Application.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Application\\Application.csproj"
               },
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Domain\\Domain.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Infrastructure\\Infrastructure.csproj"
               },
-              "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj": {
-                "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj"
+              "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj": {
+                "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj"
               }
             }
           }
@@ -411,6 +492,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -419,21 +518,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj": {
+    "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\lucio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lucio\\Documents\\GitHub\\upc-pre-202401--si730-WS52-SmarTech-BackEndPlatform\\Shared\\obj\\",
+        "projectPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USUARIO\\RiderProjects\\Propertunity\\Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lucio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -441,6 +544,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -469,12 +573,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.14, 7.0.14]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
