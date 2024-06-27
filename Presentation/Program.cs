@@ -57,7 +57,7 @@ builder.Services.AddSwaggerGen(options =>
             In = ParameterLocation.Header,
             Description = "Please enter token",
             Name = "Authorization",
-            Type = SecuritySchemeType.Http,
+            Type = SecuritySchemeType.ApiKey,
             BearerFormat = "JWT",
             Scheme = "bearer"
         });
@@ -139,6 +139,18 @@ builder.Services.AddDbContext<PropertunityDataCenterContext>(
         );
     });
 
+// Cors
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader();
+        });
+});
 
 var app = builder.Build();
 
@@ -155,17 +167,38 @@ using (var context = scope.ServiceProvider.GetService<PropertunityDataCenterCont
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+    });
 }
+else
+{
+    app.UseSwagger();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+        c.RoutePrefix = string.Empty; // Para hacer que Swagger esté disponible en la raíz
+    });
 
-app.UseAuthentication();
+    app.UseEndpoints(endpoints =>
+    {
+        endpoints.MapControllers();
+        endpoints.MapGet("/swagger/index.html", async context => { context.Response.Redirect("/swagger/index.html"); })
+            .AllowAnonymous();
+    });
 
-app.UseHttpsRedirection();
+    app.UseCors("AllowAllOrigins");
 
-app.UseAuthorization();
+    app.UseAuthentication();
 
-app.MapControllers();
+    app.UseHttpsRedirection();
 
-app.UseMiddleware<AuthenticationMiddleware>();
+    app.UseAuthorization();
 
-app.Run();
+    app.MapControllers();
+
+    app.UseMiddleware<AuthenticationMiddleware>();
+
+    app.Run();
+}
